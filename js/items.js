@@ -22,9 +22,14 @@ function pushUser(user_name, user_number) {
     console.log(user_name.search(/\d/));
     console.log(user_name.length);
     console.log(user_number.search(/\d{16}/));
+    console.log(user_name.length == 0);
+    console.log(user_name.length >= 20);
+    console.log((user_name.match(/\d/)));
+    console.log((user_number.search(/\d{16}/) <= 0) && (user_number.length != 16 ));
     var validation = ((user_number.search(/\d{16}/) <= 0) && (user_number.length != 16 )) ||
                       (user_name.match(/\d/)) ||
-                      (user_name.length <= 25 && user_name.length == 0)
+                      (user_name.length == 0) ||
+                      (user_name.length >= 20)
     console.log(validation);
     if (validation) {
       document.getElementById('existing').innerHTML = "Invalid input data";
