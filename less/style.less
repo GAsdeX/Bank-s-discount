@@ -22,47 +22,48 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  .left-bar {
-    padding: 0 15px;
-    float: left;
-    width: 200px;
-    input {
-      padding: 7px 14px;
-      border: 1px solid black;
-      margin-bottom: 30px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    button {
-      padding: 7px 14px;
-      border: 1px solid black;
-      width: 100%;
-    }
-  }
-  .right-bar {
-    padding: 0 15px;
-    float: left;
-    width: 400px;
-    .five-clients {
-      ul {
-        width: 100%;
-        overflow-y: scroll;
-        height: 153px;
-        li {
-          display: block;
-          .name {
-            float: left;
-            padding: 7px 15px;
-            width: 150px;
-          }
-          .num {
-            padding: 7px 15px;
-          }
-        }
-      }
-    }
-    .field {
+  width: 680px;
+}
 
+.bank-discount__left-bar {
+  padding: 0 15px;
+  float: left;
+  width: 200px;
+  .input-line {
+    padding: 7px 14px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .submit-button {
+    padding: 7px 14px;
+    border: 1px solid black;
+    width: 100%;
+  }
+}
+
+.bank-discount__right-bar {
+  padding: 0 15px;
+  float: left;
+  width: 400px;
+}
+
+.bank-discount__right-bar__show-clients {
+  ul {
+    width: 100%;
+    overflow-y: scroll;
+    height: 153px;
+    li {
+      display: block;
+      .name {
+        float: left;
+        padding: 7px 15px;
+        width: 150px;
+      }
+      .num {
+        padding: 7px 15px;
+      }
     }
   }
 }

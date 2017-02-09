@@ -1,6 +1,6 @@
 function print_clients(e) {
   console.log('five entering');
-  // field.forEach(user => field.innerHTML += "<li><div class=\"name\">"+user.name+"</div><div class=\"num\">"+user.number+"</div></li>");
+
   if (localStorage.length == 0) {
     localStorage.setItem(1234123412341229, "Вася");
     localStorage.setItem(1234123412341230, "Даша");
@@ -18,12 +18,25 @@ function print_clients(e) {
 
 function pushUser(user_name, user_number) {
   console.log(user_name+ "|"+ user_number)
-  if (localStorage.getItem(user_number)){
-    document.getElementById('existing').innerHTML = "This number already exists";
-  } else {
-    console.log(localStorage)
-    document.getElementById('existing').innerHTML = "";
-    localStorage.setItem(user_number, user_name);
-    print_user(user_number, user_name);
+  try {
+    console.log(user_name.length);
+    console.log(user_number.search(/\d{16}/));
+    var validation = ((user_number.search(/\d{16}/) <= 0) && (user_number.length != 16 )) ||
+                      (user_name.search(/\d/) == 0) ||
+                      (user_name.length <= 50 && user_name.length == 0)
+    console.log(validation);
+    if (validation) {
+      document.getElementById('existing').innerHTML = "Invalid input data";
+    }
+    else if (localStorage.getItem(user_number)){
+      document.getElementById('existing').innerHTML = "This number already exists";
+    }  else {
+      console.log(localStorage)
+      document.getElementById('existing').innerHTML = "";
+      localStorage.setItem(user_number, user_name);
+      print_user(user_number, user_name);
+    }
+  } catch (err) {
+    alert("you got an \"" + err + "\" error");
   }
 }
